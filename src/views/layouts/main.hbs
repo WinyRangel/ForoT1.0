@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    {{>head}}
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark p-2">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/public/images/imgshare-logo.png" alt="imgShare" />
+        </a>
+<button type="button" class="btn btn-primary filter-btn" data-filter="all">Mostrar todo</button>
+<button type="button" class="btn btn-secondary filter-btn" data-filter="nature">Descripción</button>
+<button type="button" class="btn btn-secondary filter-btn" data-filter="animals">Fecha</button>
+<button type="button" class="btn btn-secondary filter-btn" data-filter="food">Titulo</button>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </nav>
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-8">
+          {{{ body  }}} 
+        </div>
+        <div class="col-md-4">
+          {{>stats this}}
+          {{>popular this}}
+          {{>comments this}}
+        </div>
+      </div>
+    </div>
+    <!-- SCRIPTS -->
+    {{>footer}}
+    <script src="/public/js/scripts.js"></script>
+  </body>
+</html>
